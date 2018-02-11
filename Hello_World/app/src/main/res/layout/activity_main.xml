@@ -9,7 +9,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/from_robert_wong"
-        android:textSize="34sp"
+        android:textSize="36sp"
+        android:fontFamily="sans-serif-light"
         android:textColor="#000"
         />
     <TextView
@@ -18,8 +19,9 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:text="@string/to_birthday_person"
-        android:textSize="32sp"
+        android:textSize="36sp"
         android:textColor="@color/colorPrimaryDark"
+        android:fontFamily="sans-serif-light"
         android:layout_alignParentEnd="true" />
 
     <ImageView
