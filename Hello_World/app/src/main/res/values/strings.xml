@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Hello World</string>
+    <string name="from_robert_wong">From, Robert Wong</string>
+    <string name="this_is_a_happy_birthday_card">This is a happy birthday card</string>
+    <string name="to_birthday_person">To, Birthday Person</string>
 </resources>
