@@ -3,4 +3,8 @@
     <string name="from_robert_wong">From, Robert Wong</string>
     <string name="this_is_a_happy_birthday_card">This is a happy birthday card</string>
     <string name="to_birthday_person">To, Birthday Person</string>
+    <string name="ty_card">Udacity\'s Big League (OC:LilyPichu)</string>
+    <string name="buffer_text">This is a buffer for the text below</string>
+    <string name="thank_text">It is time to be Grateful</string>
+    <string name="end_credits">HOLD</string>
 </resources>

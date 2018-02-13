@@ -1,33 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/this_is_a_happy_birthday_card"
+        android:scaleType="centerCrop"
+        android:src="@drawable/androidparty" />
+
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/from_robert_wong"
-        android:textSize="36sp"
+        android:layout_height="match_parent"
         android:fontFamily="sans-serif-light"
-        android:textColor="#000"
-        />
+        android:paddingLeft="20dp"
+        android:paddingTop="20dp"
+        android:text="@string/from_robert_wong"
+        android:textColor="#ffffff"
+        android:textSize="36sp"
+        tools:ignore="UnusedAttribute" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:text="@string/to_birthday_person"
-        android:textSize="36sp"
-        android:textColor="@color/colorPrimaryDark"
         android:fontFamily="sans-serif-light"
-        android:layout_alignParentEnd="true" />
+        android:padding="20dp"
+        android:text="@string/to_birthday_person"
+        android:textColor="#ffffff"
+        android:textSize="36sp"
+        tools:ignore="UnusedAttribute" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/androidparty"
-        android:contentDescription="@string/this_is_a_happy_birthday_card" />
 
 </RelativeLayout>
