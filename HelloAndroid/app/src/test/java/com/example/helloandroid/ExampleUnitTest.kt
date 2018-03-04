@@ -1,4 +1,4 @@
-package com.example.archo.helloandroid
+package com.example.helloandroid
 
 import org.junit.Test
 

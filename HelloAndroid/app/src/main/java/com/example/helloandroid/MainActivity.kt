@@ -1,4 +1,4 @@
-package com.example.archo.helloandroid
+package com.example.helloandroid
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle

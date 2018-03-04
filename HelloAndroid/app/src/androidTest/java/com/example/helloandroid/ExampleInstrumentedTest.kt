@@ -1,4 +1,4 @@
-package com.example.archo.helloandroid
+package com.example.helloandroid
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getTargetContext()
-        assertEquals("com.example.archo.helloandroid", appContext.packageName)
+        assertEquals("com.example.helloandroid", appContext.packageName)
     }
 }

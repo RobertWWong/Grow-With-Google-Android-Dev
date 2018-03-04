@@ -1,85 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivityCard"
-    >
+    tools:context=".MainActivityCard">
 
     <ImageView
-        android:src="@drawable/lily_nugget"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="center"
         android:contentDescription="This is a Thank You card. PC to LilyPichu, a league streamer."
-        />
+        android:scaleType="center"
+        android:src="@drawable/lily_nugget" />
 
+    <!-- Initially, I planned to have a caption that would resize my text proportionally to a position on the image
+         (like say, flush to the top of her right ear),
+         -->
     <TextView
         android:id="@+id/buffer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingBottom="112dp"
         android:layout_centerHorizontal="true"
         android:contentDescription="@string/buffer_text"
-         />
-    <!--There are two ways to display your text values, one through hardcoding
-        and the other through calling te string resource variable name-->
-
+        android:paddingBottom="112dp" />
+    <!-- There are two ways to display your text values, one through hardcoding
+        and the other through calling te string resource variable name -->
     <Button
         android:id="@+id/Thanks"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="32sp"
-        android:layout_centerHorizontal="true"
         android:layout_below="@+id/buffer"
-        android:background="@color/colorAccent"
-        android:text="@string/thank_text"
+        android:layout_centerHorizontal="true"
+        android:background="#d3d3d3"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        />
-
+        android:text="@string/thank_text"
+        android:textSize="32sp" />
     <!-- If you are going to position a layout/view with align,
          do remember to not match_parent to the orientation that you desire
-         ie if you want to move it height wise (y axis), leave layout_height to wrap
-         -->
+         ie if you want to move it height wise (y axis), leave layout_height to wrap -->
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        >
-
+        android:layout_alignParentBottom="true">
         <!-- And make sure you your children element layouts do not conflict
-            with the parent!
-            -->
+            with the parent! -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:text="@string/end_credits"
+            android:layout_alignParentRight="true"
             android:fontFamily="casual"
-            android:textColor="#c02f1d"
-            android:textSize="42sp"
-            android:paddingRight="5dp"
             android:paddingBottom="20dp"
-            />
+            android:paddingRight="5dp"
+            android:text="@string/end_credits"
+            android:textColor="#c02f1d"
+            android:textSize="42sp" />
 
         <TextView
             android:id="@+id/stuff"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:textSize="32sp"
-            android:paddingTop="82dp"
-            android:fontFamily="cursive"
             android:layout_alignParentStart="true"
-            tools:ignore="HardcodedText"
+            android:fontFamily="cursive"
+            android:paddingTop="82dp"
             android:text="PC: LilyPichu"
-            />
+            android:textSize="32sp"
+            tools:ignore="HardcodedText" />
     </RelativeLayout>
-
-
-
 </RelativeLayout>
