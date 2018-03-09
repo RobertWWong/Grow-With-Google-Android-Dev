@@ -7,10 +7,14 @@ import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
 
+    private var help_txt = "help"
+
     @Override
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
 
     }
 
