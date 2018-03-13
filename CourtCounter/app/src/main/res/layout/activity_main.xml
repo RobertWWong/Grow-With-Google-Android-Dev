@@ -32,6 +32,7 @@
         android:text="+3 points"
         android:layout_margin="4dp"
         android:id="@+id/three_p"
+        android:onClick="pointMade"
         />
 
 
@@ -42,6 +43,7 @@
         android:text="+2 points"
         android:layout_margin="4dp"
         android:id="@+id/two_p"
+        android:onClick="pointMade"
         />
 
 
@@ -52,5 +54,6 @@
         android:text="FREE THROW"
         android:layout_margin="4dp"
         android:id="@+id/free_p"
+        android:onClick="pointMade"
         />
 </LinearLayout>
