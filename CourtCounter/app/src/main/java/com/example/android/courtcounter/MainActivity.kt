@@ -9,7 +9,7 @@ import kotlinx.android.synthetic.main.activity_main.view.*
 
 class MainActivity : AppCompatActivity() {
 //    https://stackoverflow.com/questions/25905086/multiple-buttons-onclicklistener-android
-    private var score = 0;
+    private var score = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun pointMade(view: View) {
-        var point_view = findViewById<View>(R.id.team_a_score) as TextView
+//        var point_view = findViewById<View>(R.id.team_a_score) as TextView
         when(view.id){      //This is the switch function
             R.id.three_p -> score += 3
             R.id.two_p -> score += 2
@@ -35,4 +35,4 @@ class MainActivity : AppCompatActivity() {
         displayForTeamA()
     }
 
-j}
+}
