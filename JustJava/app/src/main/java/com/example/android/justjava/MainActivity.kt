@@ -21,18 +21,11 @@ import java.text.NumberFormat
 class MainActivity : AppCompatActivity() {
 
     var quantity = 2;
+    var price = 0;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-    }
-
-    /**
-     * This method is called when the order button is clicked.
-     */
-    fun submitOrder(view: View) {
-        display(quantity);
-        displayPrice(quantity* 5);
     }
 
     /**
@@ -46,6 +39,27 @@ class MainActivity : AppCompatActivity() {
     private fun displayPrice(number: Int){
         val priceTextView = findViewById<View>(R.id.price_text_view) as TextView;
         priceTextView.text = NumberFormat.getCurrencyInstance().format(number);
+    }
+
+    private fun calculatePrice(): Int {
+        return quantity * price
+    }
+
+    private fun calculatePrice(quantity: Int): Int {
+        return quantity * price
+    }
+    private fun calculatePrice(quantity: Int, cost: Int): Int {
+        return quantity * cost
+    }
+
+    /**
+     * This method is called when the order button is clicked.
+     */
+    fun submitOrder(view: View) {
+        display(quantity);
+        val total_price = calculatePrice(quantity,price)
+        val str_msg ="Total: $%d\nThankYou!".format(total_price)
+        displayPrice(total_price)
     }
 
 
