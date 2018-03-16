@@ -1,147 +1,182 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    >
+    tools:context=".MainActivity">
 
-    <!-- This is the parent linear layout, defaulting to horizontal orientation.
-         The two child layouts are also linear, and are oriented vertically.
-         IDs are assigned to all Views within the child layouts.
+    <!--I wonder, can we apply css style syntax to account for all text within a certain element?
+        As in not needing to not needing to declare a style in every single button/text view
+        I need to find someway to declare that in the layout. If that exists.-->
 
-         Operations to keep track of each team's score is provided onClick for each button.
+    <!--This is the parent linear layout, defaulting to horizontal orientation.
+        The two child layouts are also linear, and are oriented vertically.
+        IDs are assigned to all Views within the child layouts.
+
+        Operations to keep track of each team's score is provided onClick for each button.
+    -->
+
+    <!--Most styling/padding are done in the styles.xml file. Looks a bit better, although less info
     -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
 
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_weight="1"
-
             android:id="@+id/team_a_view"
-            >
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
             <TextView
+                style="@style/teamStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Team A"
-                android:gravity="center"
-                android:padding="4dp"
-                />
+                android:gravity="center_horizontal"
+                android:text="Team A" />
+
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="0"
-                android:padding="4dp"
                 android:id="@+id/team_a_score"
-                />
-
-            <Button
+                style="@style/scoreStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="+3 points"
-                android:layout_margin="4dp"
+                android:gravity="center_horizontal"
+                android:text="0" />
+
+            <Button
                 android:id="@+id/three_pa"
-                android:onClick="pointMade"
-                />
-
-
-            <Button
+                style="@style/buttonSpace"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="+2 points"
-                android:layout_margin="4dp"
+                android:layout_gravity="center"
+                android:gravity="center_horizontal"
+                android:onClick="pointMadeDecider"
+                android:text="+3 points" />
+
+            <Button
                 android:id="@+id/two_pa"
-                android:onClick="pointMade"
-                />
-
-
-            <Button
+                style="@style/buttonSpace"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="FREE THROW"
-                android:layout_margin="4dp"
+                android:layout_gravity="center"
+                android:gravity="center_horizontal"
+                android:onClick="pointMadeDecider"
+                android:text="+2 points" />
+
+            <Button
                 android:id="@+id/free_pa"
-                android:onClick="pointMade"
-                />
+                style="@style/buttonSpace"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center_horizontal"
+                android:onClick="pointMadeDecider"
+                android:text="FREE THROW" />
+
+            <Button
+                android:id="@+id/foul_a2"
+                style="@style/buttonSpace2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:onClick="pointMadeDecider"
+                android:text="foul" />
+
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="0dp"
+        <!--CAN I NOT NEST A LINEARLAYOUT IN A VIEW GROUP? THAT CAUSED MY APP TO CRASH!
+            Crash only occur in Kotlin development. For api 22 build.
+            Okay yeah, don't nest anything within a view. For now, do some research for it.-->
+        <View
+            android:layout_width="1dp"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_weight="1"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/darker_gray" />
+
+        <LinearLayout
             android:id="@+id/team_b_view"
-            >
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Team B"
-                android:gravity="center"
-                android:padding="4dp"
-                />
-
-            <TextView
+                style="@style/teamStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="0"
-                android:padding="4dp"
+                android:text="Team B" />
+
+            <TextView
                 android:id="@+id/team_b_score"
-                />
-
-            <Button
+                style="@style/scoreStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="+3 points"
-                android:layout_margin="4dp"
+                android:text="0" />
+
+            <Button
                 android:id="@+id/three_pb"
-                android:onClick="pointMade"
-                />
-
-
-            <Button
+                style="@style/buttonSpace2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="+2 points"
-                android:layout_margin="4dp"
+                android:onClick="pointMadeDecider"
+                android:text="+3 points" />
+
+
+            <Button
                 android:id="@+id/two_pb"
-                android:onClick="pointMade"
-                />
-
-
-            <Button
+                style="@style/buttonSpace2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="FREE THROW"
-                android:layout_margin="4dp"
+                android:onClick="pointMadeDecider"
+                android:text="+2 points" />
+
+            <Button
                 android:id="@+id/free_pb"
-                android:onClick="pointMade"
-                />
+                style="@style/buttonSpace2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:onClick="pointMadeDecider"
+                android:text="FREE THROW" />
+
+            <Button
+                android:id="@+id/foul_b2"
+                style="@style/buttonSpace2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:onClick="pointMadeDecider"
+                android:text="foul" />
         </LinearLayout>
     </LinearLayout>
 
     <!-- A button that will reset the score for both teams-->
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_alignParentBottom="true"
-            android:id="@+id/reset_button"
-            android:text="Reset Scores"
-            android:onClick="resetScores"
-            />
+    <TextView
+        android:id="@+id/foul_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/reset_button"
+        android:text="@string/foul"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible"
+        android:textColor="#ff0000"
+        />
+
+    <Button
+        android:id="@+id/reset_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="32dp"
+        android:onClick="resetScores"
+        android:text="Reset Scores" />
 
 </RelativeLayout>
