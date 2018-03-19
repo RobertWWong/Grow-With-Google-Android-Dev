@@ -69,15 +69,13 @@ class MainActivity : AppCompatActivity() {
 
     //Need to figure out a way for functions to take input onClick, as writing two separate yet similiar functions is meh
     fun incr(view: View) {
-        val quantityTextView = findViewById<View>(R.id.quantity_text_view) as TextView;
         quantity += 1;
-        quantityTextView.text = quantity.toString();
+        display(quantity)
     }
 
     fun decr(view: View) {
-        val quantityTextView = findViewById<View>(R.id.quantity_text_view) as TextView;
         if (quantity > 0)
             quantity -= 1;
-        quantityTextView.text = quantity.toString()
+        display(quantity)
     }
 }
