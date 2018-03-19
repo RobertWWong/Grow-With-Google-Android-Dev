@@ -13,7 +13,6 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.TextView
-import java.text.NumberFormat
 
 /**
  * This app displays an order form to order coffee.
@@ -21,7 +20,7 @@ import java.text.NumberFormat
 class MainActivity : AppCompatActivity() {
 
     var quantity = 2;
-    var price = 0;
+    var price = 5;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,9 +35,9 @@ class MainActivity : AppCompatActivity() {
         quantityTextView.text = number.toString();
     }
 
-    private fun displayPrice(number: Int){
-        val priceTextView = findViewById<View>(R.id.price_text_view) as TextView;
-        priceTextView.text = NumberFormat.getCurrencyInstance().format(number);
+    private fun displayMessage(text: String) {
+        val priceTextView = findViewById<View>(R.id.order_summary_text_view) as TextView;
+        priceTextView.text = text
     }
 
     private fun calculatePrice(): Int {
@@ -48,32 +47,37 @@ class MainActivity : AppCompatActivity() {
     private fun calculatePrice(quantity: Int): Int {
         return quantity * price
     }
+
     private fun calculatePrice(quantity: Int, cost: Int): Int {
         return quantity * cost
     }
 
     /**
-     * This method is called when the order button is clicked.
+     * This method is called when the order button is clicked}.
      */
     fun submitOrder(view: View) {
-        display(quantity);
-        val total_price = calculatePrice(quantity,price)
-        val str_msg ="Total: $%d\nThankYou!".format(total_price)
-        displayPrice(total_price)
+        val total_price = calculatePrice()
+        val str_msg = createOrderSummary(total_price)
+        displayMessage(str_msg)
     }
 
+    fun createOrderSummary(total_price: Int): String {
+        var msg = "Name Kaptain Kunai\n"
+        msg += "Quantity: %d\nTotal: $%d\nThank You!".format(quantity, total_price)
+        return msg
+    }
 
     //Need to figure out a way for functions to take input onClick, as writing two separate yet similiar functions is meh
-    fun incr (view: View){
+    fun incr(view: View) {
         val quantityTextView = findViewById<View>(R.id.quantity_text_view) as TextView;
         quantity += 1;
         quantityTextView.text = quantity.toString();
     }
 
-    fun decr (view: View) {
+    fun decr(view: View) {
         val quantityTextView = findViewById<View>(R.id.quantity_text_view) as TextView;
-        if (quantity >0)
+        if (quantity > 0)
             quantity -= 1;
-        quantityTextView.text = quantity.toString();
-    };
+        quantityTextView.text = quantity.toString()
+    }
 }
