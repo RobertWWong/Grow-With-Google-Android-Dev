@@ -1,5 +1,6 @@
 package com.example.android.justkotlinapps
 
+import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.LinearLayout
@@ -17,9 +18,9 @@ class MainActivity : AppCompatActivity() {
         val lin_lay_main = findViewById<LinearLayout>(R.id.test_layout)
 
         val someTextObj = TextView(this)
-        someTextObj.text = "save me pham"
+        someTextObj.text = "Life is fine and dandy until taxes come."
         someTextObj.textSize = 20f
-        someTextObj.setTextColor(0xff0000)
+        someTextObj.setTextColor(Color.RED)
 
         lin_lay_main.addView(someTextObj)
     }
