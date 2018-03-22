@@ -11,7 +11,9 @@ package com.example.android.justjava
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.view.View
+import android.widget.CheckBox
 import android.widget.TextView
 
 /**
@@ -57,12 +59,23 @@ class MainActivity : AppCompatActivity() {
      */
     fun submitOrder(view: View) {
         val total_price = calculatePrice()
-        val str_msg = createOrderSummary(total_price)
+        val checkBox = findViewById<CheckBox>(R.id.whipped_cream)
+        val hasWhippedCream = checkBox.isChecked
+        val chocoBox = findViewById<CheckBox>(R.id.chocolate_checkbox)
+        val hasChocolate = chocoBox.isChecked
+
+
+//        Log.v("Is checkbox clicked?", hasWhippedCream.toString())
+
+        val str_msg = createOrderSummary(total_price, hasWhippedCream, hasChocolate)
         displayMessage(str_msg)
     }
 
-    fun createOrderSummary(total_price: Int): String {
+    fun createOrderSummary(total_price: Int, hasCream: Boolean, hasChocolate: Boolean): String {
+
         var msg = "Name Kaptain Kunai\n"
+        msg += "Add whipped cream? %s\n".format(if (hasCream == true) "True" else "False")
+        msg += "Add chocolate? %s\n".format(if (hasChocolate == true) "True" else "False")
         msg += "Quantity: %d\nTotal: $%d\nThank You!".format(quantity, total_price)
         return msg
     }
