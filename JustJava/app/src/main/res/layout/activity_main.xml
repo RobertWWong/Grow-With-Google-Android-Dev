@@ -12,6 +12,11 @@
         android:orientation="vertical"
         tools:context="com.example.android.justjava.MainActivity">
 
+        <EditText
+            android:id="@+id/name_field"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -44,7 +49,7 @@
 
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:text="@string/quantity" />
@@ -100,6 +105,13 @@
             android:layout_margin="8dp"
             android:onClick="submitOrder"
             android:text="@string/order" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:onClick="practiceIntents"
+            android:text="Testing intent" />
 
     </LinearLayout>
 </ScrollView>
