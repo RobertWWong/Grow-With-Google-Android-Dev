@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Curry Quiz App</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Curry">What defines a curry?</string>
+    <string name="Curry_answer">Answer</string>
 </resources>
